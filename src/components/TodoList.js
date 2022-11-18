@@ -48,11 +48,11 @@ const TodoList = () => {
     return (
         <>
             <div className = "header text-center">
-                <h3>Planejamento</h3>
-                <button className = "btn btn-primary mt-2" onClick = {() => setModal(true)} >+ Adicionar</button>
+                <h1>Planejamento</h1>
+                <button className = "btn btn-primary mt-4" onClick = {() => setModal(true)} >+ Adicionar</button>
             </div>
             <div className = "task-container">
-            {taskList && taskList.map((obj , index) => <Card taskObj = {obj} index = {index} deleteTask = {deleteTask} updateListArray = {updateListArray}/> )}
+            {taskList && taskList.map((obj , index) => <Card key={index} taskObj = {obj} index = {index} deleteTask = {deleteTask} updateListArray = {updateListArray}/> )}
             </div>
             <CreateTask toggle = {toggle} modal = {modal} save = {saveTask}/>
         </>
